@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router";
 
 export const Details = () =>{
-    const{store, actions} = useContext(Context);
+    const { store, actions } = useContext(Context);
     const params = useParams()
     useEffect(()=>{
        actions.getOne(params.uid)

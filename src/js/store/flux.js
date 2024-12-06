@@ -1,20 +1,19 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			url:'https://www.swapi.tech/api/',
+			url:'https://www.swapi.tech/api',
 			people:[],
 			character:[]
 			
 		},
 		actions: {
-			getPeople:async() =>{
+			addRemoveFavorite:()=>{},
+			getData: async (type) => {
 				try{
-					const resp= await fetch(getStore().url+'/people');
+					const resp = await fetch(`${getStore().url}/${type}`);
 					if(!resp.ok) throw new Error('Error fetching people')
 						const data= await resp.json()
-					console.log('data----->', data)
-					console.log('data.results------->', data.results)
-					setStore({people:data.results})
+					setStore({[type]: data.results});
 
 				} catch (error){
 					console.log(error);

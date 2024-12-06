@@ -1,9 +1,12 @@
-import React from "react"
+import React, {useContext} from "react"
 import { Link } from "react-router-dom"
+
+import { Context } from "../store/appContext";
 
 
 export const Card = (props) =>{
 
+    const {store, actions} = useContext(Context);
 
     return (
         <div className="col-sm-6 col-m-4 col-lg-3">
@@ -13,7 +16,7 @@ export const Card = (props) =>{
                 <figcaption>{props.name}</figcaption>
                 </figure>
                 <div className="d-flex justify-content-around">
-                <Link to={'/details/'+props.uid}>
+                <Link to={`/details/${props.type}/${props.uid}`}>
                 <button className="btn btn-primary">Learn more</button>
                 </Link>
                     
