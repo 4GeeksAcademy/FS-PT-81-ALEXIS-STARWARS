@@ -6,7 +6,7 @@ export const Details = () =>{
     const { store, actions } = useContext(Context);
     const params = useParams()
     useEffect(()=>{
-       actions.getOne(params.uid)
+       actions.getOne(params.type, params.uid)
         console.log(params);
     },[])
     return(

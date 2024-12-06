@@ -21,9 +21,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			
 			},
-			getOne: async(uid)=>{
+			getOne: async(type, uid)=>{
 				try{
-					const resp = await fetch(getStore().url+'/people/'+uid);
+					const resp = await fetch(`${getStore().url}/${type}/${uid}`);
 					if(!resp.ok) throw new Error('Error fetching people');
 					const data = await resp.json();
 					setStore({character: data.result});
