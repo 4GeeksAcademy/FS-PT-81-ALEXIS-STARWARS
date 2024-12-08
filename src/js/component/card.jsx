@@ -1,18 +1,24 @@
-import React, {useContext} from "react"
+import React, {useContext, useState} from "react"
 import { Link } from "react-router-dom"
 
 import { Context } from "../store/appContext";
 
 
+
 export const Card = (props) =>{
 
+
+    const [fav, setFav] = useState("");
+	const [favList, setFavList] = useState ([props]);
     const {store, actions} = useContext(Context);
     const handleFav = () => {
         const fav= {...props}
-    console.log(fav)
+ 
     actions.addRemoveFavorite(fav)
 
     }
+
+    
 
     return (
         <div className="col-sm-6 col-m-4 col-lg-3">
@@ -26,8 +32,8 @@ export const Card = (props) =>{
                 <button className="btn btn-primary">Learn more</button>
                 </Link>
                 <button className="btn btn-outline-warning" onClick={handleFav}>
-  <i className="fa-regular fa-star"></i>
-</button>
+                <i className="fa-regular fa-star"></i>
+                    </button>
 
              
                      </div>
