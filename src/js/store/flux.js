@@ -3,18 +3,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			url:'https://www.swapi.tech/api',
 			people:[],
-			character:[],
-			favorites:[]
+			character: {},
+			favorites: [],
+			starships: []
 			
 		},
 		actions: {
 			addRemoveFavorite:(fav)=>{
-				const store= getstore();
-				const isFavorite = store.favorites.some(el=> el.uid === fav.uid && el.type === fav.type)
+				const store= getStore();
+				const isFavorite = store.favorites.some(el=> el.uid === fav.uid && el.type===fav.type);
 				if (isFavorite) 
 				{
 					setStore({
-						favorites: store.favorites.filter(el=>!(el.uid === fav.uid && el.type === fav.type))
+						favorites: store.favorites.filter(el=> !(el.uid === fav.uid && el.type===fav.type))
 					})
 				} else {
 				setStore({favorites: [...store.favorites, fav]})
@@ -23,12 +24,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getData: async (type) => {
 				try{
 					const resp = await fetch(`${getStore().url}/${type}`);
-					if(!resp.ok) throw new Error('Error fetching people')
-						const data= await resp.json()
+					if(!resp.ok) throw new Error('Error fetching people');
+						const data= await resp.json();
 					setStore({[type]: data.results});
 
 				} catch (error){
-					console.log(error);
+					console.error (error);
 
 				}
 			
@@ -36,11 +37,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getOne: async(type, uid)=>{
 				try{
 					const resp = await fetch(`${getStore().url}/${type}/${uid}`);
-					if(!resp.ok) throw new Error('Error fetching people');
+					if(!resp.ok) throw new Error('Error fetching character');
 					const data = await resp.json();
 					setStore({detailed: data.result});
 				} catch(error){
-					console.log(error);
+					console.error (error);
 				}
 			}
 }
@@ -49,3 +50,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 export default getState;
+
+
+

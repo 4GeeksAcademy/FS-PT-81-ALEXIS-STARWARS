@@ -26,6 +26,18 @@ export const Home = () => {
 				}
 				</div>
 			</section>
+			<section>
+				<h2>
+					Starships
+					</h2>
+					<div className="row">
+						{
+							store.starships?.map(el=> <Card ke={el.uid} type={"starships"} name={el.name} uid={el.uid} img={`https://starwars-visualguide.com/assets/img/starships/${el.uid}.jpg`} />)
+						}
+
+					</div>
+					
+			</section>
 		</div>
 	);
 	

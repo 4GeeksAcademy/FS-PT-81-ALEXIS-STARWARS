@@ -16,15 +16,22 @@ const {store, actions} = useContext(Context);
             </figure>
 
 </div>
+
         <div>
         <p> 
+            {store.detailed?.properties?.model}
+            </p>
+        <p>
+            {store.detailed?.properties?.manufacturer}
+            </p>
+            <p> 
             {store.detailed?.properties?.rotation_period}
             </p>
         <p>
             {store.detailed?.properties?.orbital_period}
             </p>
         <p>
-            {store.detailed?.properties?.gravit}
+            {store.detailed?.properties?.gravity}
         </p>
         <p>
             {store.detailed?.properties?.population}
