@@ -7,6 +7,12 @@ import { Context } from "../store/appContext";
 export const Card = (props) =>{
 
     const {store, actions} = useContext(Context);
+    const handleFav = ()=>{
+        const fav= {...props}
+    console.log(fav)
+    actions.addRemoveFavorite(fav)
+
+    }
 
     return (
         <div className="col-sm-6 col-m-4 col-lg-3">
@@ -20,7 +26,7 @@ export const Card = (props) =>{
                 <button className="btn btn-primary">Learn more</button>
                 </Link>
                     
-                    <button className="btn btn-outline-secondary">corazon</button>
+                    <button className="btn btn-outline-secondary" onClick={handleFav}>corazon</button>
                 </div>
                 </div>
         </div>

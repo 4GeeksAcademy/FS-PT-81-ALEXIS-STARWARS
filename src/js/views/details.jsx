@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router";
+import { PeopleDetails } from "../component/peopleDetails.jsx";
+import { PlanetsDetails } from "../component/planetsDetails.jsx";
 
 export const Details = () =>{
     const { store, actions } = useContext(Context);
@@ -12,24 +14,8 @@ export const Details = () =>{
     return(
 
        <div className="container">
-       <div className="card">
-        <div className="d-flex">
-            <figure>
-                <img   src="" alt="" />
-                <figcaption>
-                    {store.character?.properties?.name}
-                </figcaption>
-            </figure>
-
-        <div>
-        <p> eye color: {store.character?.properties?.eye_color}</p>
-        <p>hair color: {store.character?.properties?.hair_color}</p>
-        <p>mass: {store.character?.properties?.mass}
-        </p>
-        <p>skin color: {store.character?.properties?.skin_color}</p>
-        </div>
-       </div>
-       </div>
+      {params.type==='people' && <PeopleDetails type={"characters"} uid={params.uid} />}
+      {params.type==='planets' && <PlanetsDetails type={params.type} uid={params.uid} />}
        </div>
     )
 }
