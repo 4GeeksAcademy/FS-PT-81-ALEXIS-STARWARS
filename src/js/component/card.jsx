@@ -28,13 +28,13 @@ export const Card = (props) =>{
                     <h3>{props.name}
 
                     </h3>
-                    
+                  
                 </figcaption>
                 
                 </figure>
                 
                 <div className="d-flex justify-content-around my-3 mx-0">
-                
+               
                 <Link to={`/details/${props.type}/${props.uid}`}>
                 <button className="btn btn-outline-primary">Learn more</button>
                 </Link>

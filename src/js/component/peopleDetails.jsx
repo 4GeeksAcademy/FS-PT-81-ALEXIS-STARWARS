@@ -25,17 +25,28 @@ const {store, actions} = useContext(Context);
 </div>
 <h3  style={{border:"1px solid red"}}/>
         <div className=" d-flex text-center justify-content-center">
-            <table style={{color:"red", fontSize:"20px"}}>
+            <table style={{color:"red", fontSize:"20px", borderCollapse: "separate", borderSpacing: "10px" }}>
+                <thead>
                 <tr>
                 <th>Mass
-                    <td>{store.detailed?.properties?.mass}</td></th>
-                <th>Hair color<td>{store.detailed?.properties?.hair_color}</td></th>
-                <th>Eye color<td>{store.detailed?.properties?.eye_color}</td></th>
-                <th>Skin color<td>{store.detailed?.properties?.skin_color}</td></th>
-                <th>Height<td>{store.detailed?.properties?.height}</td></th>
+                    </th>
+                <th>Hair color</th>
+                <th>Eye color</th>
+                <th>Skin color</th>
+                <th>Height</th>
                 
                 </tr>
+                </thead>
+                <tbody>
+                <td>{store.detailed?.properties?.mass}</td>
+                <td>{store.detailed?.properties?.hair_color}</td>
+                <td>{store.detailed?.properties?.eye_color}</td>
+                <td>{store.detailed?.properties?.skin_color}</td>
+                <td>{store.detailed?.properties?.height}</td>
+
+                </tbody>
             </table>
+
             
         </div>
        </div>
