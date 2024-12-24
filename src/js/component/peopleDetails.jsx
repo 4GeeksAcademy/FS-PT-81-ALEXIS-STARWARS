@@ -16,12 +16,11 @@ const {store, actions} = useContext(Context);
             </figure>
 </div>
         <div>
-        <p>  {store.detailed?.properties?.mass}</p>
-        <p> {store.detailed?.properties?.hair_color}</p>
-        <p>{store.detailed?.properties?.eye_color}
-        </p>
-        <p>{store.detailed?.properties?.skin_color}</p>
-        <p>  {store.detailed?.properties?.height}</p>
+        <p> Mass: {store.detailed?.properties?.mass}</p>
+        <p> Hair color: {store.detailed?.properties?.hair_color}</p>
+        <p> Eye color:  {store.detailed?.properties?.eye_color}</p>
+        <p> Skin color: {store.detailed?.properties?.skin_color}</p>
+        <p> Height:  {store.detailed?.properties?.height}</p>
         </div>
        </div>
       

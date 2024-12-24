@@ -25,19 +25,19 @@ const {store, actions} = useContext(Context);
             {store.detailed?.properties?.manufacturer}
             </p>
             <p> 
-            {store.detailed?.properties?.rotation_period}
+        Rotation period: {store.detailed?.properties?.rotation_period}
             </p>
         <p>
-            {store.detailed?.properties?.orbital_period}
+        Orbital period: {store.detailed?.properties?.orbital_period}
             </p>
         <p>
-            {store.detailed?.properties?.gravity}
+        Gravidty: {store.detailed?.properties?.gravity}
         </p>
         <p>
-            {store.detailed?.properties?.population}
+        Population: {store.detailed?.properties?.population}
             </p>
         <p>
-            {store.detailed?.properties?.climate}
+        Climate: {store.detailed?.properties?.climate}
             </p>
         </div>
        </div>

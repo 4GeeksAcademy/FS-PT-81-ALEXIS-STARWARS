@@ -8,8 +8,7 @@ import { Context } from "../store/appContext";
 export const Card = (props) =>{
 
 
-    const [fav, setFav] = useState("");
-	const [favList, setFavList] = useState ([props]);
+    
     const {store, actions} = useContext(Context);
     const handleFav = () => {
         const fav= {...props}
@@ -25,7 +24,13 @@ export const Card = (props) =>{
             <div className="card">
                 <figure>
                 <img className="card-img-top" src={props.img} alt={props.name} />
-                <figcaption>{props.name}</figcaption>
+                <figcaption>
+                    <h3>{props.name}
+
+                    </h3>
+                    
+                </figcaption>
+                
                 </figure>
                 <div className="d-flex justify-content-around">
                 <Link to={`/details/${props.type}/${props.uid}`}>
