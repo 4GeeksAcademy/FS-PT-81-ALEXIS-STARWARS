@@ -21,9 +21,9 @@ export const Card = (props) =>{
 
     return (
         <div className="col-sm-6 col-m-4 col-lg-3">
-            <div className="card">
-                <figure>
-                <img className="card-img-top" src={props.img} alt={props.name} />
+            <div className="card my-5" style={{width:"400px"}}>
+                <figure className="">
+                <img className="card-img-top" src={props.img} alt={props.name} style={{width: "400px", height:"200px"}} />
                 <figcaption>
                     <h3>{props.name}
 
@@ -32,9 +32,11 @@ export const Card = (props) =>{
                 </figcaption>
                 
                 </figure>
-                <div className="d-flex justify-content-around">
+                
+                <div className="d-flex justify-content-around my-3 mx-0">
+                
                 <Link to={`/details/${props.type}/${props.uid}`}>
-                <button className="btn btn-primary">Learn more</button>
+                <button className="btn btn-outline-primary">Learn more</button>
                 </Link>
                 <button className="btn btn-outline-warning" onClick={handleFav}>
                 <i className="fa-regular fa-star"></i>

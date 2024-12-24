@@ -12,13 +12,26 @@ export const Navbar = () => {
 
 	}
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		
+		<nav className="navbar navbar-light bg-light mb-2">
 			<div className="container mx-5">
-			<Link to="/">
+				<div className="starwars">
+			<Link to="/"   
+			style={{ textDecoration: "none" }}>
 			
-				<span className="  navbar-brand mb-0 h1" style={{fontFamily:"Astral Delight"}}>
-					Star Wars</span>
+				<span className="  navbar-brand mb-0 h1" style={{
+                            fontFamily: "'Metamasie', serif",
+                            fontSize: "50px",
+							fontWeight:"bold",
+							
+                            color: "white", 
+							WebkitTextStroke: "2px black",
+                           
+                        }}>
+					Star <br>
+					</br> Wars</span>
 			</Link>
+			</div>
 			<div className="ml-auto">
 				
 				<div className="dropdown">
@@ -56,6 +69,7 @@ export const Navbar = () => {
 			</div>
 			
 		</nav>
+		
 		
 	);
 };
