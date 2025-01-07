@@ -18,6 +18,6 @@ export const Details = () =>{
       {params.type==='people' && <PeopleDetails type={'characters'} uid={params.uid} />}
       {params.type==='planets' && <PlanetsDetails type={params.type} uid={params.uid} />}
       {params.type ==='starships' && <StarshipsDetails type={params.type} uid={params.uid} />}
-       </div>
+       </div> 
     )
 }
